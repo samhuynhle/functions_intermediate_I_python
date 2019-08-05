@@ -21,10 +21,17 @@
 
 import random #importing Pytho's random module.
 def randInt(min=0 , max=100):
-    num = random.random() * max + min
-    num = round(num)
+    if max < 0:
+        return "Sorry, let's make the maximum more than 0."
+    elif min > max:
+        return "No can do. The minimum is somehow greater than maximum, please set the maximum to be greater than the minimum."
+    else:
+        num = random.random() * max + min
+        num = round(num)
     return num
 print(randInt())
 print(randInt(max=10000000000))
 print(randInt(min=90))
 print(randInt(max=25,min=20))
+print(randInt(max=10, min=100))
+print(randInt(max=-5))
